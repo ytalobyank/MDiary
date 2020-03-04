@@ -13,7 +13,7 @@ namespace MDiary
     public partial class Dayform : Form
     {
         Timer timec = new Timer();
-        
+
         private int day = 0;
         private int mes = DateTime.Now.Month;
         public Dayform()
@@ -74,28 +74,26 @@ namespace MDiary
         public Dayform(int day)
         {
             InitializeComponent();
-            
+
             this.day = day;
-            labelDay.Text="dia " + day;
+            labelDay.Text = "dia " + day;
             lvObjectives.View = View.Details;
             LoadActivities();
-            lvObjectives.ColumnWidthChanging +=new ColumnWidthChangingEventHandler(lvObjectives_ColumnWidthChanging);
+            lvObjectives.ColumnWidthChanging += new ColumnWidthChangingEventHandler(lvObjectives_ColumnWidthChanging);
         }
-        private void lvObjectives_ColumnWidthChanging(object sender,ColumnWidthChangingEventArgs e)
-            {
+        private void lvObjectives_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
             // Check if the new width is too big or too small.
             if (e.NewWidth > 1 || e.NewWidth < 1)
             {
-                    MessageBox.Show("Não é possível mudar isto.");
+                MessageBox.Show("Não é possível mudar isto.");
                 e.Cancel = true;
             }
         }
 
-    private void t_Tick(object sender, EventArgs e)
+        private void t_Tick(object sender, EventArgs e)
         {
-
             Invoke((MethodInvoker)delegate () { updateTimer(); });
-
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -106,9 +104,9 @@ namespace MDiary
             }
             else
             {
-                
                 Edit ed = new Edit(day);
                 ed.ShowDialog();
+                LoadActivities();
             }
         }
         private void updateTimer()
