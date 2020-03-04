@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace MDiary
@@ -23,8 +24,16 @@ namespace MDiary
         {
             Button nameButton = sender as Button;
             
-            Dayform dfm = new Dayform(Convert.ToInt32(nameButton.Name),DateTime.Now.Month);
-                dfm.Show();
+            
+            if (Application.OpenForms.OfType<Dayform>().Count() > 0)
+            {
+                Application.OpenForms.OfType<Dayform>().First().Focus();
+            }
+            else
+            {
+                Dayform dfm = new Dayform(Convert.ToInt32(nameButton.Name));
+                dfm.ShowDialog();
+            }    
         }
     }
 }
