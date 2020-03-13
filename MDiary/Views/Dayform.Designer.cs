@@ -1,4 +1,4 @@
-﻿namespace MDiary
+﻿namespace MDiary.Views
 {
     partial class Dayform
     {
@@ -128,10 +128,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Dayform";
             this.Text = "Dayform";
-            this.Load += new System.EventHandler(this.Dayform_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

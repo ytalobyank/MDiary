@@ -1,4 +1,4 @@
-﻿namespace MDiary
+﻿namespace MDiary.Views
 {
     partial class Edit
     {
@@ -156,11 +156,9 @@
             this.Name = "Edit";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Edit";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Edit_FormClosed);
             this.Load += new System.EventHandler(this.Edit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

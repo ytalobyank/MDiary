@@ -1,6 +1,6 @@
-﻿namespace MDiary
+﻿namespace MDiary.Views
 {
-    partial class MDiary
+    partial class MainForm
     {
         /// <summary>
         /// Variável de designer necessária.
